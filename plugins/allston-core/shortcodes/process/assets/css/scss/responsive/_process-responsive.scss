@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Process shortcode responsive style - begin
+   ========================================================================== */
+
+.eltdf-process-holder {
+	
+	@include ipad-landscape {
+        background: none;
+
+        $columns: ('four', 'five');
+        @for $i from 0 to length($columns) {
+            &.eltdf-#{nth($columns, $i+1)}-columns {
+                $column_width: 100%/($i+2);
+
+                .eltdf-process-item {
+                    width: $column_width;
+                    margin-bottom: 30px;
+                }
+    
+                @media only screen and (min-width: $phone-landscape-plus-pixel) {
+    
+                    .eltdf-process-item {
+    
+                        &:nth-child(#{$i+2}n+1) {
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+
+	}
+	
+	@include phone-landscape {
+
+        $columns: ('two', 'three', 'four', 'five');
+        @for $i from 0 to length($columns) {
+
+            &.eltdf-#{nth($columns, $i+1)}-columns {
+
+                .eltdf-process-item {
+                    width: 100%!important;
+                    margin-bottom: 40px;
+                    .eltdf-pi-content .eltdf-pi-image-holder:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+	}
+
+}
+/* ==========================================================================
+   Process shortcode responsive style - end
+   ========================================================================== */

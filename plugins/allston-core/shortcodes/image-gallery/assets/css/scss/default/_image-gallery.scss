@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+
+.eltdf-image-gallery {
+	@include eltdfRelativeHolderLayout();
+	
+	&.eltdf-has-shadow {
+	
+		.eltdf-ig-image-inner {
+			box-shadow: $default-box-shadow;
+		}
+		
+		&.eltdf-ig-slider-type,
+		&.eltdf-ig-carousel-type {
+			
+			.owl-stage-outer {
+				padding: 0 0 20px;
+			}
+			
+			.eltdf-ig-image {
+				box-shadow: $default-box-shadow;
+			}
+		}
+	}
+	
+	.eltdf-ig-image {
+		@include eltdfRelativeHolderLayout();
+		box-sizing: border-box;
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	.eltdf-ig-image-inner {
+		@include eltdfRelativeHolderLayout();
+	}
+	
+	.eltdf-ig-slider {
+		@include eltdfRelativeHolderLayout();
+
+		.owl-nav .owl-next {
+			right: 37px;
+		}
+
+		.owl-nav .owl-prev {
+			left: 37px;
+		}
+
+		.owl-nav .owl-prev,
+		.owl-nav .owl-next {
+			color: #fff;
+			border: 1px solid #fff;
+		}
+
+		.owl-dots {
+			margin: 44px 0 0;
+		}
+	}
+	/***** Image Gallery Grid Style - begin *****/
+	
+	.eltdf-ig-grid {
+		
+		.eltdf-ig-image {
+			float: left;
+		}
+		
+		$gallery_columns: ('two', 'three', 'four', 'five', 'six');
+		@for $i from 0 to length($gallery_columns) {
+			&.eltdf-ig-#{nth($gallery_columns, $i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				.eltdf-ig-image {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/***** Image Gallery Grid Style - end *****/
+	
+	/***** Image Gallery Masonry Style - begin *****/
+	
+	.eltdf-ig-masonry {
+		opacity: 0;
+		@include eltdfTransition(opacity .2s ease-out);
+		
+		.eltdf-ig-grid-sizer {
+			width: 100%;
+		}
+		
+		.eltdf-ig-grid-gutter {
+			width: 0;
+		}
+		
+		$masonry_columns: ('two', 'three', 'four', 'five', 'six');
+		
+		@for $i from 0 to length($masonry_columns) {
+			&.eltdf-ig-#{nth($masonry_columns,$i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				.eltdf-ig-image,
+				.eltdf-ig-grid-sizer {
+					width: $column_width;
+				}
+				
+				.eltdf-ig-image.eltdf-large-masonry-item {
+					width: $column_width * 2;
+				}
+			}
+		}
+	}
+	
+	/***** Image Gallery Masonry Style - end *****/
+	
+	/***** Custom Link Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-custom-link {
+		
+		.eltdf-ig-image {
+			
+			a {
+				@include eltdfImageOverlayHoverStyle();
+			}
+		}
+	}
+	
+	/***** Custom Link Behavior Style - end *****/
+	
+	/***** Lightbox Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-lightbox {
+		
+		.eltdf-ig-image-inner {
+			overflow: hidden;
+
+			img {
+				@include eltdfTransitionTransform(1s cubic-bezier(0.215, 0.61, 0.355, 1));
+				will-change: transform;
+				-webkit-filter: blur();
+				filter: blur();
+			}
+
+			a {
+				@include eltdfImageOverlayHoverStyle();
+			}
+
+			&:hover img {
+				@include eltdfTransform(scale(1.04));
+			}
+		}
+	}
+	
+	/***** Lightbox Behavior Style - end *****/
+	
+	/***** Zoom Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-zoom {
+		
+		.eltdf-ig-image {
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					@include eltdfTransform(scale(1.04));
+				}
+			}
+			
+			.eltdf-ig-image-inner {
+				overflow: hidden;
+			}
+			
+			img {
+				@include eltdfTransform(scale(1));
+				@include eltdfTransitionTransform(.3s ease-in-out);
+			}
+		}
+	}
+	
+	/***** Zoom Behavior Style - end *****/
+	
+	/***** Grayscale Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-grayscale {
+		
+		.eltdf-ig-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					-webkit-filter: grayscale(0);
+					filter: none;
+				}
+			}
+			
+			img {
+				filter: url('img/desaturate.svg#grayscale');
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				filter: gray;
+				filter: grayscale(100%);
+				@include eltdfTransition(all .3s ease-in-out);
+			}
+		}
+	}
+	
+	/***** Grayscale Behavior Style - end *****/
+}
+/* ==========================================================================
+   Image Gallery shortcode style - end
+   ========================================================================== */

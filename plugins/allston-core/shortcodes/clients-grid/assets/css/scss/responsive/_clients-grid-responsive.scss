@@ -1,0 +1,78 @@
+.eltdf-clients-grid-holder {
+	@include laptop-landscape-medium {
+		$gallery_columns_number: ('five', 'six');
+		
+		@for $i from 0 to length($gallery_columns_number) {
+			&.eltdf-cg-#{nth($gallery_columns_number,$i+1)}-columns {
+				$gallery_item_size: 100% / 4;
+				
+				.eltdf-cc-item {
+					width: $gallery_item_size;
+				}
+				
+				@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+					
+					.eltdf-cc-item {
+						
+						&:nth-child(4n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@include ipad-landscape {
+		$gallery_columns_number: ('four', 'five', 'six');
+		
+		@for $i from 0 to length($gallery_columns_number) {
+			&.eltdf-cg-#{nth($gallery_columns_number,$i+1)}-columns {
+				$gallery_item_size: 100% / 3;
+				
+				.eltdf-cc-item {
+					width: $gallery_item_size;
+				}
+				
+				@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+					
+					.eltdf-cc-item {
+						
+						&:nth-child(3n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@include ipad-portrait {
+		$gallery_columns_number: ('three', 'four', 'five', 'six');
+		
+		@for $i from 0 to length($gallery_columns_number) {
+			&.eltdf-cg-#{nth($gallery_columns_number,$i+1)}-columns {
+				
+				.eltdf-cc-item {
+					width: 50%;
+				}
+				
+				@media only screen and (min-width: $phone-landscape-plus-pixel) {
+					
+					.eltdf-cc-item {
+						
+						&:nth-child(2n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@include phone-landscape {
+		.eltdf-cc-item {
+			width: 100% !important; // !important is set to override all other stronger selectors
+		}
+	}
+}

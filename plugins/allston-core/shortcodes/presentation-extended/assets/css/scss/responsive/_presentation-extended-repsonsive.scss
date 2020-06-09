@@ -1,0 +1,49 @@
+/* Presentation Extended Shortcode Responsive CSS - Start */
+.eltdf-pe-holder {
+	@include ipad-portrait {
+		.eltdf-pe-holder-inner {
+			display: block;
+		}
+		.eltdf-pe-section {
+			display: block;
+			width: 100%;
+		}
+	}
+	/* Content section - start */
+	.eltdf-pe-content {
+		@include laptop-landscape-mac {
+			padding: 26% 12% 14%;
+		}
+		@include ipad-portrait {
+			padding: 10%;
+		}
+	}
+	/* Content section - end */
+	
+	/* Image section - start */
+	.eltdf-pe-image {
+		@include ipad-portrait {
+			background-image: none;
+		}
+	}
+	.eltdf-responsive-image {
+		@include ipad-portrait {
+			display: block;
+		}
+	}
+	/* Image section - end */
+	
+	/* Gallery section - start */
+	.eltdf-pe-slider-image {
+		@include ipad-portrait {
+			background-image: none;
+		}
+		.eltdf-pe-slider-responsive-image {
+			@include ipad-portrait {
+				display: block;
+			}
+		}
+	}
+	/* Gallery section - end */
+}
+/* Presentation Extended Shortcode Responsive CSS - End */

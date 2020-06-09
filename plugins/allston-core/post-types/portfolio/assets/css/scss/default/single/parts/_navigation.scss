@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Portfolio Single navigation style - begin
+   ========================================================================== */
+
+.eltdf-ps-navigation {
+	position: relative;
+	display: table;
+	width: 100%;
+	vertical-align: middle;
+	padding: 0;
+	margin: 84px 0 0;
+	clear: both;
+    box-sizing: border-box;
+
+    .eltdf-ps-full-width-custom-layout & {
+        padding: 0 40px;
+    }
+	
+	.eltdf-ps-back-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		@include eltdfTransform(translateX(-50%) translateY(-50%));
+		
+		a {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+			cursor: pointer;
+			font-size: 0;
+			line-height: 15px;
+			
+			.eltdf-square-holder {
+				display: inline-block;
+				vertical-align: middle;
+				width: 15px;
+				height: 15px;
+				line-height: 15px;
+				position: relative;
+			}
+			
+			.eltdf-square-item {
+				display: inline-block;
+				width: 6px;
+				height: 6px;
+				background-color: #000;
+				position: absolute;
+				
+				&.eltdf-square-item-tl {
+					top: 0;
+					left: 0;
+				}
+				&.eltdf-square-item-tr {
+					top: 0;
+					right: 0;
+				}
+				&.eltdf-square-item-br {
+					bottom: 0;
+					right: 0;
+				}
+				&.eltdf-square-item-bl {
+					bottom: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+	
+	.eltdf-ps-prev,
+	.eltdf-ps-next {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		width: 49%;
+		padding: 0;
+		box-sizing: border-box;
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 26px;
+			line-height: 57px;
+			width: 57px;
+			height: 57px;
+			border: 1px solid $default-heading-color;
+			text-align: center;
+			
+			.eltdf-ps-nav-mark {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+			
+			&:hover {
+				color: $default-heading-color;
+			}
+		}
+	}
+	
+	.eltdf-ps-prev {
+		
+		a {
+			.eltdf-ps-nav-mark {
+				left: 0;
+			}
+		}
+	}
+	
+	.eltdf-ps-next {
+		text-align: right;
+		
+		a {
+			.eltdf-ps-nav-mark {
+				right: 0;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Single navigation style - end
+   ========================================================================== */

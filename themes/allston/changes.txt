@@ -1,0 +1,37 @@
+1.2
+- Added WooCommerce 3.9.1 compatibility
+- Updated WPBakery Page Builder to 6.1
+- Updated Revolution Slider to 6.1.8
+- Updated Allston Core to 1.2
+- Updated Child theme to 1.0.2
+- Removed unused file instagram-redirect.php from Allston Instagram Feed plugin
+- Removed unused file twitter-redirect.php from Allston Twitter Feed plugin
+- Updated Allston Instagram Feed plugin to 1.0.1
+- Updated Allston Twitter Feed plugin to 1.0.1
+- Fixed portfolio single full screen slider info appearance
+- Fixed 'Portfolio Full Screen Slider' appearance with small number of items
+
+1.1.3
+- Added WooCommerce 3.6.1 compatibility
+- Improved import functionality
+- Improved theme security
+
+1.1.2
+- Updated Allston Core to 1.1.1
+- Updated Child theme to 1.0.1
+- Fixed issue with global options saving
+- Improved framework files
+
+1.1.1
+- Minor theme changes
+
+1.1
+- Added WooCommerce 3.4.5 compatibility
+- Added compatibility with Gutenberg plugin
+- Updated WPBakery Page Builder to 5.7
+- Updated Revolution Slider to 5.4.8.3
+- Updated Allston Core to 1.1
+- Updated pot file
+- Fixed uncovering footer visibility on touch devices
+- Fixed info box item responsive when 3 columns
+- Improved framework files

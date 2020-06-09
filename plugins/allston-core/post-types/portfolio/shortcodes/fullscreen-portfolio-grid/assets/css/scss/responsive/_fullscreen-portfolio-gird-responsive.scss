@@ -1,0 +1,31 @@
+
+/* ==========================================================================
+   Fullscreen Show Grid responsive style - begin
+   ========================================================================== */
+
+.eltdf-fullscreen-portfolio-grid-holder{
+	
+	@include ipad-portrait{
+		&.eltdf-fpg-three-columns,
+		&.eltdf-fpg-four-columns {
+			
+			.eltdf-fpg-item {
+				width: 50%;
+			}
+		}
+	}
+	
+	@include phone-portrait{
+		&.eltdf-fpg-two-columns,
+		&.eltdf-fpg-three-columns,
+		&.eltdf-fpg-four-columns {
+			
+			.eltdf-fpg-item {
+				width: 100%;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Fullscreen Show Grid responsive style - end
+   ========================================================================== */

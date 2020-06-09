@@ -1,0 +1,97 @@
+.eltdf-interactive-image-box {
+	
+	&:not(.eltdf-one-column) {
+		
+		.eltdf-iib-item  {
+			float: left;
+		}
+	}
+	
+	$columns_label: ('two', 'three', 'four', 'five');
+	
+	@for $i from 0 to length($columns_label) {
+		&.eltdf-#{nth($columns_label,$i+1)}-columns {
+			
+			.eltdf-iib-item  {
+				width: 100% / ($i+2);
+			}
+			
+			@if ($i == 3) { // set different break point for five columns
+				@media only screen and (min-width: $laptop-landscape-large-plus-pixel) {
+					
+					.eltdf-iib-item  {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else if ($i == 2) { // set different break point for four columns
+				@media only screen and (min-width:  $ipad-landscape-plus-pixel) {
+					
+					.eltdf-iib-item  {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else {
+				@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+					
+					.eltdf-iib-item  {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.eltdf-iib-item {
+		
+		.eltdf-iib-background-image {
+			background-position: center;
+			background-size: cover;
+			background-color: #dadada;
+		}
+
+		.eltdf-iib-content-holder {
+			padding: 28px;
+			box-sizing: border-box;
+			background-color: rgba(#fff, .9);
+			opacity: 0;
+			@include eltdfTransition(opacity .3s);
+		}
+
+		&:hover {
+			.eltdf-iib-content-holder {
+				opacity: 1;
+			}
+		}
+		.eltdf-iib-content-holder-inner {
+			border: 1px solid #7d7d7d;
+			padding: 130px 75px 150px;
+		}
+
+		.eltdf-iib-title {
+			margin: 0 0 15px;
+		}
+
+		.eltdf-separator-holder {
+			margin-bottom: 17px;
+		}
+
+		.eltdf-iib-text{
+			margin-bottom: 23px;
+		}
+
+		.eltdf-iib-button {
+			a,i {
+				color: #000;
+			}
+		}
+	}
+}

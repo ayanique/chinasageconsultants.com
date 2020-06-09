@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Portfolio Single - Small Images layout style - begin
+   ========================================================================== */
+
+.eltdf-portfolio-single-holder {
+    
+    &.eltdf-ps-small-images-layout {
+    
+        .eltdf-ps-image-holder {
+        
+            .eltdf-ps-image {
+                margin: 0 0 30px;
+            
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Portfolio Single - Small Images layout style - end
+   ========================================================================== */

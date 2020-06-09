@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Search responsive styles - begin
+   ========================================================================== */
+/* common mixins - start */
+/* common mixins - end */
+/* mixins styles - start */
+/* mixins styles - end */
+/* ==========================================================================
+# Search template responsive style - begin
+========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .eltdf-search-page-holder article .eltdf-post-image {
+    width: 80px;
+  }
+  .eltdf-search-page-holder article .eltdf-post-title-area {
+    padding: 0 0 0 105px;
+    min-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .eltdf-search-page-holder article .eltdf-post-image {
+    width: 60px;
+  }
+  .eltdf-search-page-holder article .eltdf-post-title-area {
+    padding: 0 0 0 80px;
+    min-height: 60px;
+  }
+}
+
+/* ==========================================================================
+# Search template responsive style - end
+========================================================================== */
+/* ==========================================================================
+   Search responsive styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=search-map-responsive.css.map */

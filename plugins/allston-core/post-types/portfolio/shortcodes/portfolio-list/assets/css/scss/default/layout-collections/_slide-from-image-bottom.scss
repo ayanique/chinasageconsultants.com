@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Slide From Image Bottom style - begin
+   ========================================================================== */
+
+.eltdf-portfolio-list-holder {
+	
+	&.eltdf-pl-slide-from-image-bottom {
+		
+		&.eltdf-pl-has-shadow {
+			
+			.eltdf-pl-item-inner {
+				box-shadow: $default-box-shadow;
+			}
+		}
+		
+		article {
+			
+			&:hover {
+				
+				.eltdf-pli-text-holder {
+					@include eltdfTransform(translateY(0));
+					@include eltdfTransitionTransform(.45s cubic-bezier(.77,0,.175,1));
+				}
+				
+				.eltdf-pli-text-wrapper {
+					opacity: 1;
+					@include eltdfTransform(translateY(0));
+					@include eltdfTransition(.3s cubic-bezier(.165,.84,.44,1) .2s);
+				}
+			}
+			
+			.eltdf-pl-item-inner {
+				overflow: hidden;
+			}
+			
+			.eltdf-pli-category-holder {
+				
+				a {
+					font-family: $default-heading-font;
+					color: $default-text-color;
+					
+					&:hover {
+						color: $first-main-color;
+					}
+				}
+			}
+		}
+		
+		.eltdf-pli-text-holder {
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: auto;
+			bottom: 0;
+			left: 0;
+			padding: 35px 12% 37px;
+			background-color: #fff;
+			overflow: hidden;
+			box-sizing: border-box;
+			@include eltdfTransform(translateY(100%));
+			@include eltdfTransitionTransform(.3s  cubic-bezier(.77,0,.175,1) .1s);
+		}
+		
+		.eltdf-pli-text-wrapper {
+			opacity: 0;
+			@include eltdfTransform(translateY(-200%));
+			-webkit-transition: -webkit-transform .4s cubic-bezier(.77,0,.175,1), opacity .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+			transition: transform .4s cubic-bezier(.77,0,.175,1), opacity .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Slide From Image Bottom style - end
+   ========================================================================== */

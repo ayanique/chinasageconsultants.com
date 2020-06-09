@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Testimonials standard style - begin
+   ========================================================================== */
+
+.eltdf-testimonials-holder {
+    
+    &.eltdf-testimonials-standard {
+        text-align: center;
+        
+        .eltdf-testimonial-content {
+            width: 48%;
+            margin: 0 auto;
+            @include ipad-landscape {
+                width: 90%;
+            }
+        }
+
+        .eltdf-testimonial-image {
+            @include eltdfRelativeHolderLayout();
+            margin: 0 0 26px;
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .eltdf-testimonial-title {
+            margin: 0;
+            font-weight: 400;
+            color: #080808;
+        }
+
+        .eltdf-testimonial-author {
+            margin: 28px 0 0;
+            .eltdf-testimonials-author-name {
+                font-family: $default-heading-font;
+                color: #080808;
+            }
+
+            .eltdf-testimonials-author-job {
+                font-family: $default-text-font;
+                color: #080808;
+            }
+        }
+
+        .eltdf-testimonial-text {
+            margin: 20px 0 0;
+            color: #464646;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        
+        .owl-nav {
+            @include phone-landscape {
+                display: none;
+            }
+        }
+
+        /* Light/Dark styles */
+        &.eltdf-testimonials-light {
+            
+            .eltdf-testimonial-title,
+            .eltdf-testimonial-text,
+            .eltdf-testimonials-author-name,
+            .eltdf-testimonials-author-job{
+                color: #fff;
+            }
+
+            .eltdf-owl-slider .owl-nav .owl-next, .eltdf-owl-slider .owl-nav .owl-prev{
+                border-color: #fff;
+                color: #fff;
+            }
+
+            .owl-dots {
+                
+                .owl-dot {
+                    
+                    span {
+                        border: 2px solid rgba(#fff, .5);
+                    }
+                    
+                    &:hover,
+                    &.active {
+
+                        span {
+                            background-color: #fff;
+                            border-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Testimonials standard style - end
+   ========================================================================== */

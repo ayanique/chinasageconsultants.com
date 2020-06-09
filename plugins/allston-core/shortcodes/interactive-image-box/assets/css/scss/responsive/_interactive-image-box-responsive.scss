@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Interactive Image Box responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-large {
+	
+	.eltdf-interactive-image-box {
+		
+		$columns_label: ('five');
+		
+		@for $i from 0 to length($columns_label) {
+			&.eltdf-#{nth($columns_label,$i+1)}-columns {
+				$gallery_item_size: 100% / 4;
+				
+				.eltdf-iib-item  {
+					width: $gallery_item_size;
+				}
+				
+				@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+					
+					.eltdf-iib-item  {
+						&:nth-child(4n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+		
+		.eltdf-iib-item {
+			.eltdf-iib-content-holder-inner {
+				padding: 23% 12%;
+			}
+		}
+	}
+}
+
+@include ipad-landscape {
+	
+	.eltdf-interactive-image-box {
+		.eltdf-iib-item  {
+			width: 100% !important; // !important is set to override all other stronger selectors
+			.eltdf-iib-content-holder-inner {
+				padding:130px 273px 150px;
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+	.eltdf-interactive-image-box {
+		.eltdf-iib-item  {
+			.eltdf-iib-content-holder-inner {
+				padding: 130px 139px 150px;
+			}
+		}
+	}
+}
+
+@include phone-portrait {
+	.eltdf-interactive-image-box {
+		.eltdf-iib-item  {
+			.eltdf-iib-content-holder-inner {
+				padding: 130px 12px 150px;
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Interactive Image Box responsive style - end
+   ========================================================================== */

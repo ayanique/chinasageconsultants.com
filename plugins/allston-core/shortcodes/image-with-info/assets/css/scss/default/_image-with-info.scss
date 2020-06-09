@@ -1,0 +1,123 @@
+.eltdf-image-with-info {
+	@include eltdfRelativeHolderLayout();
+	.eltdf-image-with-info-inner {
+		@include eltdfRelativeHolderLayout();
+	}
+	
+	.eltdf-iwi-image {
+		position: relative;
+		line-height: 0;
+	}
+	
+	.eltdf-iwi-content {
+		display: inline-block;
+		background: #fff;
+		box-sizing: border-box;
+		position: relative;
+		margin-top: -73px;
+		@include phone-landscape {
+			margin-top: 0;
+		}
+	}
+	
+	.eltdf-iwi-title {
+		font-weight: 300;
+		letter-spacing: .08em;
+		line-height: 1.3em;
+		margin: 0 0 23px;
+		font-family: $default-heading-font;
+		color: $default-heading-color;
+		font-size: 38px;
+		@include ipad-landscape {
+			font-size: 30px;
+		}
+		@include phone-landscape {
+			font-size: 25px;
+		}
+	}
+	
+	.eltdf-separator-holder {
+		margin-top: 16px;
+		margin-bottom: 19px;
+	}
+	
+	.eltdf-iwi-text {
+		margin: 0 0 32px;
+	}
+	
+	.eltdf-iwi-icons {
+		position: absolute;
+		bottom: 16px;
+		display: inline-block;
+		width: 62px;
+		text-align: center;
+		a {
+			display: inline-block;
+			width: 100%;
+			padding: 11px 0;
+			font-size: 17px;
+		}
+	}
+	
+	/* Global Content Right Style */
+	&.eltdf-iwi-layout-content-right {
+		text-align: right;
+		.eltdf-iwi-content {
+			text-align: left;
+		}
+	}
+	
+	/* Icons When Content Right Style */
+	&.eltdf-iwi-layout-content-left {
+		.eltdf-iwi-icons {
+			right: -62px;
+		}
+	}
+	
+	/* Icons When Content Left Style */
+	&.eltdf-iwi-layout-content-right {
+		.eltdf-iwi-icons {
+			left: -62px;
+		}
+	}
+	
+	/* Content Edge To Style */
+	&.eltdf-iwi-content-layout-edge-of-image {
+		.eltdf-iwi-content {
+			width: 66%;
+			padding: 44px 40px 44px 10px;
+			@include phone-landscape {
+				width: 100%;
+				padding: 44px 25px;
+			}
+		}
+	}
+	
+	/* Content Image Over Style */
+	&.eltdf-iwi-content-layout-over-image {
+		.eltdf-iwi-content {
+			width: 86%;
+			padding: 44px 40px 44px 54px;
+			@include phone-landscape {
+				width: 100%;
+				padding: 44px 25px;
+			}
+		}
+		&.eltdf-iwi-layout-content-left {
+			.eltdf-iwi-content {
+				margin-left: -20%;
+				@include phone-landscape {
+					margin-left: 0;
+				}
+			}
+		}
+		&.eltdf-iwi-layout-content-right {
+			.eltdf-iwi-content {
+				margin-right: -20%;
+				@include phone-landscape {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

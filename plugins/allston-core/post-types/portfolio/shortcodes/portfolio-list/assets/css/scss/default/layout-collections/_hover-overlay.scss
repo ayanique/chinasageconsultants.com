@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Overlay style - begin
+   ========================================================================== */
+
+.eltdf-portfolio-list-holder {
+	
+	&.eltdf-pl-hover-overlay {
+		
+		&.eltdf-pl-has-shadow {
+			
+			.eltdf-pl-item-inner {
+				box-shadow: $default-box-shadow;
+			}
+		}
+		
+		article {
+			
+			&:hover {
+				
+				.eltdf-pli-text-holder {
+					opacity: 1;
+				}
+
+				.eltdf-pli-title {
+					&:before {
+						@include eltdfTransitionTransform(.4s cubic-bezier(0.165, 0.84, 0.44, 1));
+						@include eltdfTransform(scaleX(1));
+					}
+				}
+
+				.eltdf-pli-image {
+					img {
+						@include eltdfTransform(scale(1.1));
+					}
+				}
+			}
+			
+			.eltdf-pl-item-inner {
+				overflow: hidden;
+			}
+			
+			.eltdf-pli-text {
+				
+				.eltdf-pli-category-holder {
+					
+					a {
+						font-family: $default-heading-font;
+						color: $default-text-color;
+						
+						&:hover {
+							color: $first-main-color;
+						}
+					}
+				}
+			}
+		}
+		
+		.eltdf-pli-text-holder {
+			@include eltdfAbsoluteHolderLayout();
+			padding: 20px;
+			background-color: rgba(#fff, 0.87);
+			opacity: 0;
+			text-align: center;
+			box-sizing: border-box;
+			@include eltdfTransition(opacity .3s);
+		}
+		
+		&.eltdf-info-skin-light {
+			.eltdf-pli-text {
+				.eltdf-pli-title,
+				.eltdf-pli-category-holder a {
+					color: #fff;
+				}
+			}
+		}
+
+		.eltdf-pli-image {
+			img {
+				@include eltdfTransitionTransform(1s cubic-bezier(0.215, 0.61, 0.355, 1));
+			}
+		}
+		
+		&.eltdf-info-position-bottom {
+			.eltdf-pli-text {
+				vertical-align: bottom;
+				text-align: left;
+				width: auto;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				display: inline-block;
+				height: auto;
+			}
+			.eltdf-pli-title {
+				position: relative;
+				&:before {
+					content: '';
+					display: inline-block;
+					position: absolute;
+					left: calc(-500% - 25px);
+					width: 500%;
+					background-color: $default-heading-color;
+					height: 1px;
+					top: 50%;
+					margin-top: -1px;
+					-webkit-transform-origin: 0 50%;
+					transform-origin: 0 50%;
+					@include eltdfTransitionTransform(.0s .3s);
+					@include eltdfTransform(scaleX(0));
+				}
+			}
+			&.eltdf-info-skin-light {
+				.eltdf-pli-title {
+					&:before {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Overlay style - end
+   ========================================================================== */

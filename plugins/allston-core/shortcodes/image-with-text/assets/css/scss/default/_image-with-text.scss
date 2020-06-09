@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+
+.eltdf-image-with-text-holder {
+    @include eltdfRelativeHolderLayout();
+	
+	&.eltdf-has-shadow {
+		
+		.eltdf-iwt-image {
+			box-shadow: $aux-box-shadow;
+   			 @include eltdfTransitionTransform(0.3s cubic-bezier(.215,.61,.355,1), box-shadow 0.4s cubic-bezier(.215,.61,.355,1));
+		}
+	}
+	
+	.eltdf-iwt-image {
+		@include eltdfRelativeHolderLayout();
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	.eltdf-iwt-text-holder {
+		@include eltdfRelativeHolderLayout();
+	}
+	
+	.eltdf-iwt-title {
+		margin: 32px 0 0;
+	}
+	
+	.eltdf-iwt-text {
+		margin: 14px 0 0;
+	}
+	
+	/***** Custom Link Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-custom-link {
+		
+		&:not(.eltdf-has-shadow) {
+			.eltdf-iwt-image {
+				a {
+					@include eltdfImageOverlayHoverStyle();
+				}
+			}
+		}
+
+		&.eltdf-has-shadow {
+			&:hover {
+				.eltdf-iwt-image{
+					box-shadow: $hover-box-shadow;
+					@include eltdfTransform(translateY(-7px));
+				}
+			}
+		}
+	}
+	
+	/***** Custom Link Behavior Style - end *****/
+	
+	/***** Lightbox Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-lightbox {
+		
+		.eltdf-iwt-image {
+			
+			a {
+				@include eltdfImageOverlayHoverStyle();
+			}
+		}
+	}
+	
+	/***** Lightbox Behavior Style - end *****/
+	
+	/***** Zoom Behavior Style - begin *****/
+	
+	&.eltdf-image-behavior-zoom {
+		
+		.eltdf-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					@include eltdfTransform(scale(1.04));
+				}
+			}
+			
+			img {
+				@include eltdfTransform(scale(1));
+				@include eltdfTransitionTransform(.3s ease-in-out);
+			}
+		}
+	}
+	
+	/***** Zoom Behavior Style - end *****/
+	
+	/***** Grayscale Behavior Style - begin *****/
+
+	&.eltdf-image-behavior-grayscale {
+		
+		.eltdf-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+
+			&:hover {
+				
+				img {
+					-webkit-filter: grayscale(0);
+					filter: none;
+				}
+			}
+			
+			img {
+				filter: url('img/desaturate.svg#grayscale');
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				filter: gray;
+				filter: grayscale(100%);
+				@include eltdfTransition(all .3s ease-in-out);
+			}
+		}
+	}
+	
+	/***** Grayscale Behavior Style - end *****/
+}
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */

@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Process shortcode style - begin
+   ========================================================================== */
+
+.eltdf-process-holder {
+	@include eltdfRelativeHolderLayout();
+	
+	$columns: ('two', 'three', 'four', 'five');
+	@for $i from 0 to length($columns) {
+		&.eltdf-#{nth($columns, $i+1)}-columns {
+			$column_width: 100%/($i+2);
+			
+			.eltdf-mark-horizontal-holder {
+				
+				.eltdf-process-mark {
+					width: $column_width;
+				}
+			}
+			
+			.eltdf-mark-vertical-holder {
+				
+				.eltdf-process-mark {
+					height: $column_width;
+				}
+			}
+			
+			.eltdf-process-item {
+				width: $column_width;
+			}
+			
+			@if ($i > 1) { // set different break point for five columns
+				@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+					
+					.eltdf-process-item {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else if ($i == 1) { // set different break point for four columns
+				@media only screen and (min-width:  $ipad-portrait-plus-pixel) {
+					.eltdf-process-item {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else {
+				@media only screen and (min-width: $phone-landscape-plus-pixel) {
+					
+					.eltdf-process-item {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.eltdf-process-inner {
+		margin: 0 -15px;
+	}
+	
+	.eltdf-process-item {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		float: left;
+		padding: 0 15px;
+		opacity: 0;
+		text-align: center;
+		box-sizing: border-box;
+		opacity: 0;
+		@include eltdfTransition(opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1));
+
+		&:not(:last-child){
+			.eltdf-pi-image-holder {
+				&:after {
+					display: inline-block;
+					position: absolute;
+					content: "\e068";
+					font-family: "linea-arrows-10" !important;
+					right: -15px;
+					top: 50%;
+					font-size: 35px;
+					color: $first-main-color;
+					@include eltdfTransform(translateX(50%));
+					@include eltdfTransition(opacity .65s cubic-bezier(0.165, 0.84, 0.44, 1));
+					opacity: 0;
+				}
+			}
+		}
+
+		&.eltdf-show {
+			opacity: 1;
+
+			.eltdf-process-circle {
+				opacity: 1;
+				@include eltdfTransform(scale(1));
+			}
+			
+			.eltdf-mark-horizontal-holder {
+				
+				.eltdf-process-line {
+					width: 100%;
+				}
+			}
+			
+			.eltdf-mark-vertical-holder {
+				
+				.eltdf-process-line {
+					height: 100%;
+				}
+			}
+
+			.eltdf-pi-image-holder {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	.eltdf-pi-content {
+		@include eltdfRelativeHolderLayout();
+		.eltdf-pi-image-holder {
+			padding: 0 37px;
+			box-sizing: border-box;
+			position: relative;
+			line-height: 0;
+
+			img {
+				border-radius: 50%;
+			}
+		}
+		.eltdf-pi-text-holder {
+			@include eltdfAbsoluteHolderLayout();
+		}
+		.eltdf-pi-text-holder-inner {
+			@include eltdfTableLayout();
+		}
+		.eltdf-pi-text {
+			@include eltdfTableCellLayout();
+			font-family: $default-heading-font;
+			font-size: 65px;
+			letter-spacing: 0.07em;
+			color: #fff;
+			line-height: 1;
+		}
+	}
+	
+	.eltdf-pi-title {
+		margin: 29px 0 0;
+	}
+}
+/* ==========================================================================
+   Process shortcode style - end
+   ========================================================================== */

@@ -1,0 +1,84 @@
+/* ==========================================================================
+   clients Holder shortcode style - begin
+   ========================================================================== */
+
+.eltdf-clients-grid-holder {
+	@include eltdfRelativeHolderLayout();
+	text-align: center;
+	
+	&.eltdf-cg-alignment-left {
+		text-align: left;
+	}
+	
+	&.eltdf-cg-alignment-right {
+		text-align: right;
+	}
+	
+	.eltdf-cc-item {
+		@include eltdfRelativeHolderLayout();
+		box-sizing: border-box;
+		.touch & {
+			cursor: pointer;
+		}
+	}
+	
+	.eltdf-cc-link {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	&:not(.eltdf-cg-one-columns) {
+		
+		.eltdf-cc-item {
+			float: left;
+		}
+	}
+	
+	$gallery_columns_number: ('two', 'three', 'four', 'five', 'six');
+	
+	@for $i from 0 to length($gallery_columns_number) {
+		&.eltdf-cg-#{nth($gallery_columns_number,$i+1)}-columns {
+			
+			.eltdf-cc-item {
+				width: 100% / ($i+2);
+			}
+			
+			@if ($i > 3) { // set different break point for five columns
+				@media only screen and (min-width: $laptop-landscape-medium-plus-pixel) {
+					
+					.eltdf-cc-item {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else if ($i == 2) { // set different break point for four columns
+				@media only screen and (min-width:  $ipad-landscape-plus-pixel) {
+					
+					.eltdf-cc-item {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else {
+				@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+					
+					.eltdf-cc-item {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   clients Holder shortcode style - end
+   ========================================================================== */

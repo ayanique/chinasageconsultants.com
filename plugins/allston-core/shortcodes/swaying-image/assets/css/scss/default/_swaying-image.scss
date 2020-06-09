@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Swaying Image shortcode style - begin
+   ========================================================================== */
+
+.eltdf-swaying-image-holder {
+    @include eltdfAbsoluteHolderLayout();
+    overflow: hidden;
+
+    .eltdf-swaying-image {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 120%;
+        background-size: cover;
+    }
+
+    .eltdf-si-border {
+    	position: absolute;
+    	top: 32px;
+    	right: 32px;
+    	bottom: 32px;
+    	left: 32px;
+    	border: 1px solid #fff;
+    }
+
+    @include keyframes(eltdfSwayLeft) {
+        0%, 95%, 100% {
+            @include eltdfTransform(translate3d(0, 0, 0));
+        }
+
+        48%, 52% {
+            @include eltdfTransform(translate3d(-15%, 0, 0));
+        }
+    }
+
+    @include keyframes(eltdfSwayRight) {
+        0%, 95%, 100% {
+            @include eltdfTransform(translate3d(0, 0, 0));
+        }
+
+        49%, 51% {
+            @include eltdfTransform(translate3d(15%, 0, 0));
+        }
+    }
+
+    &.eltdf-si-to-right {
+        .eltdf-swaying-image {
+            right: 0;
+            @include eltdfAnimation(eltdfSwayRight 20s linear infinite forwards);
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+    }
+
+    &.eltdf-si-to-left {
+        .eltdf-swaying-image {
+            left: 0;
+            @include eltdfAnimation(eltdfSwayLeft 20s linear infinite forwards);
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+    }
+
+    &:hover {
+        .eltdf-swaying-image {
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+        }
+    }
+}
+
+/* ==========================================================================
+   Swaying Image shortcode style - end
+   ========================================================================== */

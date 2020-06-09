@@ -1,0 +1,187 @@
+/*==========================================================================
+   Fullscreen Portfolio Grid style - begin
+   ========================================================================== */
+
+.eltdf-portfolio-fullscreen-slider-holder{
+	@include eltdfRelativeHolderLayout();
+	height: 100vh;
+	opacity: 1;
+	@include eltdfTransition(opacity .2s ease-out);
+
+	.eltdf-pfs-articles-holder{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 30%;
+		background-color: rgba(#0e0f13, .5);
+		z-index: 20;
+		@include eltdfTransform(translate3d(-100%, 0, 0));
+		padding-top: 10%;
+		box-sizing: border-box;
+		overflow: hidden;
+		
+		@include ipad-portrait {
+			width: 50%;
+		}
+		@include phone-landscape {
+			width: 70%;
+		}
+	}
+
+	&.eltdf-initialized {
+		.eltdf-pfs-articles-holder {
+			@include eltdfTransform(translate3d(0, 0, 0));
+            @include eltdfTransitionTransform(.5s cubic-bezier(0.65, 0.17, 0, 0.92));
+		}
+	}
+
+	.eltdf-pfs-item{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		position: relative;
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.1);
+			opacity: 0;
+			z-index: -1;
+			@include eltdfTransition(opacity .2s ease-out);
+			-webkit-backface-visibility: hidden;
+		}
+
+		.eltdf-pfs-item-inner{
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+			@include ipad-portrait {
+				display: inline-block;
+			}
+
+			.eltdf-pfs-item-table-cell{
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.eltdf-pfs-order{
+				width: 80px;
+				color: #fff;
+				font-size: 14px;
+				font-weight: 300;
+				font-family: $default-heading-font;
+				text-align: center;
+				
+				@include ipad-portrait {
+					width: 60px;
+				}
+			}
+
+			.eltdf-pfs-category{
+				width: 33%;
+				@include ipad-portrait {
+					width: 100%;
+					display: inline-block;
+					padding-left: 60px;
+					padding-bottom: 10px;
+					box-sizing: border-box;
+				}
+			}
+		}
+
+		.eltdf-pfs-link{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		&.hovered{
+			&:after{
+				opacity: 1;
+			}
+		}
+
+		.eltdf-pli-title{
+			color: #fff;
+			margin: 40px 0;
+			@include ipad-portrait {
+				margin: 10px 0;
+			}
+		}
+
+		.eltdf-pli-category{
+			position: relative;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 400;
+			z-index: 50;
+		}
+	}
+
+	.eltdf-pfs-image-holder{
+		width: 100%;
+		height: 100%;
+
+		.eltdf-pfs-image-holder-item{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			@include eltdfTransition(opacity .2s .4s);
+
+			&.hovered{
+			    @include eltdfTransition(opacity .5s);
+			    opacity: 1;
+			    z-index: 10;
+
+			    .eltdf-pfs-image {
+			    	@include eltdfTransitionTransform(20s cubic-bezier(0.215, 0.61, 0.355, 1));
+			    	@include eltdfTransform(scale(1.1));
+			    }
+			}
+		}
+
+		.eltdf-pfs-image {
+			@include eltdfAbsoluteHolderLayout();
+			background-position: center;
+			background-size: cover;
+			@include eltdfTransition(all .0s .5s);
+		}
+
+		.eltdf-pfs-text-holder{
+			display: table;
+			width: 100%;
+			height: 100%;
+			padding: 0 35% 0 19%;
+			box-sizing: border-box;
+
+			.eltdf-pfs-text-holder-inner{
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.eltdf-pfs-item-desc{
+				color: #fff;
+				max-width: 70%;
+			}
+
+			.eltdf-btn.eltdf-btn-simple{
+				color: #fff;
+
+				&:hover {
+					color: #fff!important;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio loading element style - end
+   ==========================================================================*/

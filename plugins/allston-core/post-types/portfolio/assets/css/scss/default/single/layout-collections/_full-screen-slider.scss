@@ -1,0 +1,300 @@
+/* ==========================================================================
+# Portfolio Single Full Screen Slider - begin
+========================================================================== */
+
+.eltdf-portfolio-single-holder.eltdf-ps-full-screen-slider-layout {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .eltdf-portfolio-slider-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 111;
+        background-color: #fff;
+        box-sizing: border-box;
+        width: 490px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 228px;
+        padding: 15px 100px 15px 80px;
+
+        @include eltdfTransition(width 0.4s ease-out, height 0.4s ease-out);
+
+        /* close */
+        .eltdf-description {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 4px 100px 0 80px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            
+            .eltdf-ptf-table-cell {
+                vertical-align: middle;
+                padding-top: 0;
+            }
+
+            .eltdf-portfolio-title {
+                margin: 0 0 11px;
+            }
+
+            .eltdf-ps-content-item {
+                margin: 0;
+            }
+        }
+
+        &:not(.opened) {
+            cursor: pointer;
+            overflow: hidden !important;
+
+            .eltdf-portfolio-slider-content-info {
+                overflow: visible !important;
+            }
+        }
+
+        .eltdf-portfolio-slider-content-info {
+            height: 100%;
+            padding: 0;
+            overflow: hidden;
+            display: none;
+            margin: 0 !important;
+            
+            .eltdf-ptf-content-holder {
+                margin-bottom: 34px;
+                .eltdf-portfolio-title {
+                    margin: 0 0 11px;
+                }
+                .eltdf-ps-content-item {
+                    margin: 0 0 22px;
+                }
+            }
+        }
+
+        .eltdf-full-width-slider-holder img {
+            display: block;
+            width: auto;
+        }
+
+        .eltdf-control {
+            position: absolute;
+            top: 18px;
+            right: 23px;
+            font-size: 18px;
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            color: #231f20;
+            cursor: pointer;
+            @include eltdfTransition(opacity 0.4s ease-out);
+            
+            > span {
+                position: absolute;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                
+                &.icon-arrows-right {
+                    top: 0;
+                    right: 0;
+                }
+    
+                &.icon-arrows-left {
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            &.eltdf-close {
+                opacity: 0;
+                z-index: 9;
+                top: 25px;
+                right: 11px;
+                > span {
+                    @include eltdfTransform(rotate(135deg) translateZ(0));
+                }
+            }
+
+            &.eltdf-open {
+                opacity: 1;
+                z-index: 99;
+                top: 18px;
+                right: 23px;
+                > span {
+                    @include eltdfTransform(rotate(-45deg) translateZ(0));
+                }
+            }
+        }
+
+
+
+        &.opened {
+            height: 100%;
+
+            .eltdf-control {
+                &.eltdf-close {
+                    opacity: 1;
+                    z-index: 99;
+                }
+
+                &.eltdf-open {
+                    opacity: 0;
+                    z-index: 9;
+
+                }
+            }
+
+        }
+
+    }
+
+    /* slider */
+    .eltdf-full-screen-slider-holder {
+        .eltdf-portfolio-slide-image {
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .slick-vertical .slick-slide {
+            border: none;
+        }
+
+        .eltdf-slick-prev,
+        .eltdf-slick-next {
+            position: absolute;
+            left: auto;
+            right: 15px;
+            top: 50%;
+            font-size: 26px;
+            color: $default-heading-color;
+            -webkit-transition: -webkit-transform .2s ease-out;
+            transition: transform .2s ease-out;
+            -webkit-backface-visibility: hidden;
+            z-index: 1;
+            cursor: pointer;
+
+            .eltdf-light-header & {
+                color: #fff;
+            }
+
+        }
+        .eltdf-slick-prev {
+            @include eltdfTransform(translateY(-24px));
+
+            &:hover {
+                @include eltdfTransform(translateY(-28px));
+            }
+        }
+
+        .eltdf-slick-next {
+            @include eltdfTransform(translateY(20px));
+
+            &:hover {
+                @include eltdfTransform(translateY(24px));
+            }
+        }
+        
+        .eltdf-slick-dots {
+            position: absolute;
+            right: 36px;
+            top: 50%;
+            color: #fff;
+            list-style: none;
+            @include eltdfTransform(translateY(-50%));
+            margin: 0;
+            > li {
+                line-height: 0;
+                margin-bottom: 19px;
+                &:last-child {
+                    margin: 0;
+                }
+                
+                span {
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: rgba(255,255,255,0.3);
+                    @include eltdfTransition(background-color .2s ease-out);
+                    cursor: pointer;
+                }
+                
+                &.slick-active,
+                &:hover {
+                    span {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        .eltdf-portfolio-single-media,
+        .eltdf-portfolio-single-media a,
+        .eltdf-portfolio-single-media img {
+            height: 100%;
+        }
+
+    }
+
+    .eltdf-ptf-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+
+        .eltdf-ptf-table-cell {
+            display: table-cell;
+            vertical-align: top;
+            padding-top: 130px;
+        }
+    }
+
+    .mkf-ptf-content-holder {
+        position: relative;
+
+        .eltdf-separator {
+            margin: 0 0 40px;
+        }
+    }
+
+    .eltdf-portfolio-content {
+        margin-bottom: 0;
+    }
+
+    .slick-slider,
+    .slick-track,
+    .slick-list {
+        height: 100%;
+    }
+
+}
+
+.single-portfolio-item {
+    .eltdf-content .eltdf-content-inner {
+        > .eltdf-full-width.eltdf-full-screen-slider > .eltdf-full-width-inner {
+            padding-top: 0;
+        }
+
+        > .eltdf-comment-holder,
+        > .eltdf-comment-form {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+    
+    //uncovering footer z-index issue
+    // .eltdf-content,
+    // .eltdf-container,
+    // .eltdf-full-width {
+
+    //     z-index: auto;
+    // }
+}
+
+/* ==========================================================================
+# Portfolio Single Full Screen Slider - end
+========================================================================== */

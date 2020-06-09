@@ -1,0 +1,31 @@
+/* ==========================================================================
+	Image Marquee shortcode responsive style - begin
+  ========================================================================== */
+    .eltdf-image-marquee-holder {
+		@include ipad-portrait {
+	        &:not(.edgtf-im-full-height) {
+	        	.eltdf-image {
+	        	    img {
+	        	        max-width: 300vmin;
+	        	    }
+	        	}
+	        }
+		}    	
+
+		@media only screen and (max-width: 812px) and (orientation:landscape) {
+			&.eltdf-im-full-height {
+			    height: 120vh;
+			    
+			    .eltdf-image {
+			        height: 120vh;
+
+			        img {
+			            height: 120vh;
+			        }
+			    }
+			}
+		}
+    }
+/* ==========================================================================
+  	Image Marquee shortcode responsive style - begin
+  ========================================================================== */

@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Parallax Info Item shortcode style - begin
+   ========================================================================== */
+
+.eltdf-parallax-info-item-holder {
+    text-align: center;
+
+    .eltdf-parallax-info-item {
+        position: relative;
+        display: inline-block;
+    }
+
+    .eltdf-pii-link {
+        @include eltdfAbsoluteHolderLayout();
+        z-index: 30;
+    }
+
+    img {
+        display: block;
+    }
+
+    .eltdf-pii-main-image-holder {
+        position: relative;
+        z-index: 10;
+    }
+
+    .eltdf-pii-background-image-holder {
+        position: absolute;
+        top: -50px;
+        max-width: 100%;
+    }
+
+    .eltdf-pii-foreground-image-holder {
+        position: absolute;
+        top: -25px;
+        max-width: 54%;
+        z-index: 20;
+    }
+
+    .eltdf-pii-title-holder {
+        position: absolute;
+        top: 100%;
+        z-index: 30;
+    }
+
+    .eltdf-pii-char {
+        margin-right: 5px;
+    }
+
+    .eltdf-pii-title {
+        text-transform: uppercase;
+        overflow: hidden;
+    }
+
+    .eltdf-pii-title-text { 
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+
+    .eltdf-pii-title-text-inner { 
+        display: inline-block;
+        @include eltdfTransform(translate3d(-100%, 0, 0));
+    }
+
+    &.eltdf-pii-left-aligned {
+        .eltdf-pii-background-image-holder {
+            right: -50px;
+        }
+
+        .eltdf-pii-foreground-image-holder {
+            left: -50%;
+        }
+
+        .eltdf-pii-foreground-image {
+            @include eltdfTransform(translateX(50%));
+        }
+
+        .eltdf-pii-title-holder {
+            left: 0;
+            @include eltdfTransform(rotate(-90deg) translateY(-100%));
+            -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+        }
+    }
+
+    &.eltdf-pii-right-aligned {
+        .eltdf-pii-background-image-holder {
+            left: -50px;
+        }
+
+        .eltdf-pii-foreground-image-holder {
+            right: -50%;
+        }
+
+        .eltdf-pii-foreground-image {
+            @include eltdfTransform(translateX(-50%));
+        }
+
+        .eltdf-pii-title-holder {
+            right: 0;
+            @include eltdfTransform(rotate(90deg) translateY(-100%));
+            -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+        }
+    }
+
+    .touch & {
+        .eltdf-pii-title .eltdf-pii-title-text-inner {
+            @include eltdfTransform(translate3d(0, 0, 0));
+        }
+    }
+
+    .no-touch & {
+        .eltdf-pii-title.eltdf-appeared  .eltdf-pii-title-text-inner {
+            @include eltdfTransform(translate3d(0, 0, 0));
+            @include eltdfTransitionTransform(1s cubic-bezier(0.23, 1, 0.32, 1) .2s);
+        }
+    }
+}
+
+/* ==========================================================================
+    Parallax Info Item shortcode style - end
+    ========================================================================== */

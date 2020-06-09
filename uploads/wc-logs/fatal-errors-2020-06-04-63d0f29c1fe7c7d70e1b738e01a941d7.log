@@ -1,0 +1,2 @@
+2020-06-04T06:25:13+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 136812672 bytes) in /Users/amoryac/Documents/Work/chinasageconsultants.com/chinasageconsultants.com/wp-includes/class-wp-image-editor-gd.php on line 96
+

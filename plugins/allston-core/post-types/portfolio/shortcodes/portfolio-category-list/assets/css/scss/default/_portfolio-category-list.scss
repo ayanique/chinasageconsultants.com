@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Portfolio Category List shortcode style - begin
+   ========================================================================== */
+
+.eltdf-portfolio-category-list-holder {
+    @include eltdfRelativeHolderLayout();
+
+	/***** Article Global Style - begin *****/
+
+    article {
+	    @include eltdfRelativeHolderLayout();
+        box-sizing: border-box;
+
+	    .touch & {
+		    cursor: pointer;
+	    }
+	
+	    &:hover {
+		
+		    .eltdf-pcli-text-holder {
+			    opacity: 1;
+		    }
+	    }
+
+	    .eltdf-pcl-item-inner {
+		    @include eltdfRelativeHolderLayout();
+		    overflow: hidden;
+	    }
+	    
+	    .eltdf-pcli-image {
+		    @include eltdfRelativeHolderLayout();
+		    
+		    img {
+			    display: block;
+			    width: 100%;
+		    }
+	    }
+	
+	    .eltdf-pcli-text-holder {
+		    @include eltdfAbsoluteHolderLayout();
+		    padding: 20px;
+		    background-color: rgba($default-heading-color, .6);
+		    opacity: 0;
+		    text-align: center;
+		    box-sizing: border-box;
+		    @include eltdfTransition(opacity .2s ease-in-out);
+	    }
+
+	    .eltdf-pcli-text-wrapper {
+	        @include eltdfTableLayout();
+	    }
+
+	    .eltdf-pcli-text {
+		    @include eltdfTableCellLayout();
+	    }
+	
+	    .eltdf-pcli-title {
+		    margin: 0;
+		    color: #fff;
+	    }
+	    
+	    .eltdf-pcli-excerpt {
+		    margin: 3px 0 0;
+		    color: #fff;
+	    }
+	
+	    .eltdf-pcli-link {
+		    @include eltdfAbsoluteHolderLayout();
+	    }
+    }
+
+	/***** Article Global Style - end *****/
+	
+	&:not(.eltdf-pcl-one-column) {
+		
+		article {
+			float: left;
+		}
+	}
+	
+	$gallery_columns_number: ('two', 'three', 'four', 'five');
+	
+	@for $i from 0 to length($gallery_columns_number) {
+		&.eltdf-pcl-#{nth($gallery_columns_number,$i+1)}-columns {
+			
+			article {
+				width: 100% / ($i+2);
+			}
+			
+			@if ($i > 1) { // set different break point for four and five columns
+				@media only screen and (min-width: $laptop-landscape-medium-plus-pixel) {
+					
+					article {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			} @else {
+				@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+					
+					article {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio Category List shortcode style - end
+   ========================================================================== */

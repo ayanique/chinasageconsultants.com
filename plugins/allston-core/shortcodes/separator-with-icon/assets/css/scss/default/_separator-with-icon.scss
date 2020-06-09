@@ -1,0 +1,40 @@
+.eltd-separator-with-icon-holder {
+	position: relative;
+
+	.eltd-separator-left,
+	.eltd-separator-right {
+		width: 88px;
+		position: absolute;
+		top: 50%;
+		border-top: 1px solid #c5c5c5;
+	}
+
+	.eltd-separator-left {
+		right: 47px;
+	}
+
+	.eltd-separator-right {
+		left: 47px;
+	}
+
+	.eltd-icon-holder {
+		display: inline-block;
+		height: 30px;
+		width: 50px;
+		font-size: 30px;
+		line-height: 30px;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		color: #272727;
+
+		@include eltdfTransform(translateX(-50%) translateY(-50%));
+
+		.eltd-icon-simple-line-icon {
+			line-height: inherit;
+		}
+
+	}
+
+}

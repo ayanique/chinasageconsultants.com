@@ -1,0 +1,128 @@
+# Copyright (C) 2020 Elated Themes
+# This file is distributed under the same license as the Allston Instagram Feed plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Allston Instagram Feed 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/allston-instagram-feed\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-03T16:15:26+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.3.0\n"
+"X-Domain: allston-instagram-feed\n"
+
+#. Plugin Name of the plugin
+msgid "Allston Instagram Feed"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin that adds Instagram feed functionality to our theme"
+msgstr ""
+
+#. Author of the plugin
+msgid "Elated Themes"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:13
+msgid "Elated Instagram Widget"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:15
+msgid "Display your Instagram feed"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:27
+msgid "Title"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:32
+msgid "Type"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:34
+msgid "Gallery"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:35
+msgid "Carousel"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:41
+msgid "Number of Columns"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:43
+msgid "Two"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:44
+msgid "Three"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:45
+msgid "Four"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:46
+msgid "Six"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:47
+msgid "Nine"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:53
+msgid "Number of Photos"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:58
+msgid "Image Size"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:60
+#: widgets/allston-instagram-widget.php:71
+msgid "Small"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:61
+msgid "Medium"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:62
+msgid "Large"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:68
+msgid "Space Between Items"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:70
+msgid "Normal"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:72
+msgid "Tiny"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:73
+msgid "No Space"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:79
+msgid "Show Instagram Icon"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:81
+msgid "Yes"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:82
+msgid "No"
+msgstr ""
+
+#: widgets/allston-instagram-widget.php:88
+msgid "Images Cache Time"
+msgstr ""

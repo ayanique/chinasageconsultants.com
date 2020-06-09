@@ -1,0 +1,198 @@
+
+.player-but, .player-but-no-style {
+
+
+  cursor: pointer;
+
+  display: inline-block;
+  position: relative;
+
+  vertical-align: middle;
+
+
+  & + * {
+
+    margin-left: 5px;
+  }
+}
+
+.player-but {
+  $size: 28px;
+  width: $size;
+  height: $size;
+
+  color: $color_player_but;
+
+  > a {
+    color: $color_player_but;
+  }
+
+  background-color: transparent;
+
+  font-size: 12px;
+
+
+  &:hover, &.active {
+
+    color: $color_player_but;
+  }
+
+  &.active {
+    .the-icon-bg {
+      border-color: #905555;
+    }
+  }
+
+
+  &.player-but--square {
+
+    > .the-icon-bg {
+
+      border-radius: 0;
+    }
+  }
+
+  & + .curr-time {
+    margin-left: 10px;
+  }
+
+  .the-icon-bg {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    //border: 1px solid $color_player_but;
+
+    border-radius: 50%;
+
+    transform: translate3d(0%, 0%, 0) scale(1);
+
+
+    transform: translate3d(0%, 0%, 0) scale(1);
+
+
+    $transition-property: transform, border;
+    $transition-duration: 0.3s;
+    $transition-timing: ease-out;
+    @include apply_transition($transition-property, $transition-duration, $transition-timing);
+  }
+
+  svg.svg-icon {
+
+    width: 15px;
+    height: 15px;
+  }
+
+  .svg-icon {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1);
+
+
+    $transition-property: transform;
+    $transition-duration: 0.3s;
+    $transition-timing: ease-out;
+    @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+    path {
+      fill: $color_player_but;
+    }
+  }
+
+  &:hover, &.active {
+    .the-icon-bg {
+
+      transform: translate3d(0%, 0%, 0) scale(0.9);
+      -webkit-transform: translate3d(0%, 0%, 0) scale(0.9);
+    }
+
+    svg.svg-icon {
+      transform: translate3d(-50%, -50%, 0) scale(1.1);
+      -webkit-transform: translate3d(-50%, -50%, 0) scale(1.1);
+    }
+  }
+
+  .extrahtml-in-float-right+.player-but{
+    margin-left: 5px;
+  }
+
+  .controls-volume + .extrahtml-in-float-right{
+    margin-left: 5px;
+  }
+}
+
+
+.dzsap-wrapper-buts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+
+  > .player-but {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+
+.dzsap-wrapper-but {
+  background-color: rgba(0, 0, 0, 0.45);
+  $size: 35px;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  vertical-align: top;
+
+
+  $transition-property: background;
+  $transition-duration: 0.3s;
+  $transition-timing: ease-out;
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+  position: relative;
+
+  > .the-icon {
+    @include centerit();
+    display: block;
+
+    color: #eeeeee;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+
+  path {
+    fill: rgba(255, 255, 255, 0.7);
+    $transition-property: fill;
+    $transition-duration: 0.3s;
+    $transition-timing: ease-out;
+    @include apply_transition($transition-property, $transition-duration, $transition-timing);
+  }
+
+  &.btn-like {
+
+    > .the-icon {
+      margin-top: 1px;
+    }
+  }
+
+  &:not(.dzsap-wrapper-but):hover {
+    background-color: rgba(0, 0, 0, 0.7);
+
+    path {
+      fill: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+
+

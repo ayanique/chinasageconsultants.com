@@ -1,0 +1,25 @@
+/* ==========================================================================
+  Conveyor Carousel shortcode responsive style - begin
+  ========================================================================== */
+
+.eltdf-conveyor-carousel {
+    @include ipad-portrait {
+        .eltdf-cc-content-holder {
+            padding: 5.6% !important;
+        }
+    }
+
+    @include phone-landscape {
+    	flex-direction: column;
+
+    	.eltdf-cc-images-holder {
+    		margin: 0 5.6%;
+    		overflow: hidden;
+    	}
+    }
+}
+
+
+/* ==========================================================================
+	Conveyor Carousel shortcode responsive style - begin
+  ========================================================================== */

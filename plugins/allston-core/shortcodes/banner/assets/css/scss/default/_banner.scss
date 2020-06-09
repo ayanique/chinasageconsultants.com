@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+
+.eltdf-banner-holder {
+    @include eltdfRelativeHolderLayout();
+	
+	.touch & {
+		cursor: pointer;
+	}
+	
+	.eltdf-banner-image {
+		@include eltdfRelativeHolderLayout();
+		@include eltdfImageOverlayHoverStyle();
+		overflow: hidden;
+		
+		img {
+			display: block;
+           	@include eltdfTransitionTransform(1s cubic-bezier(0.215, 0.61, 0.355, 1));
+		}
+	}
+
+	&:hover {
+		.eltdf-banner-image {
+			img {
+				@include eltdfTransform(scale(1.05));
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	
+	.eltdf-banner-text-holder {
+		@include eltdfAbsoluteHolderLayout();
+		z-index: 10;
+		box-sizing: border-box;
+	}
+	
+	.eltdf-banner-subtitle {
+		margin: 0;
+		color: #fff;
+	}
+	
+	.eltdf-banner-title {
+		margin: 0 0 8px;
+		color: #fff;
+	}
+	
+	&.eltdf-banner-layout-square-info {
+		.eltdf-banner-text-holder {
+			padding: 14px;
+		}
+		.eltdf-banner-text-outer {
+			@include eltdfTableLayout();
+			border: 1px solid #fff;
+		}
+		.eltdf-banner-text-inner {
+			@include eltdfTableCellLayout(bottom);
+			padding: 21px 25px 17px 25px;
+		}
+	}
+	
+	&.eltdf-banner-layout-circle-info {
+		.eltdf-banner-text-outer {
+			position: relative;
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+		}
+		.eltdf-banner-text-inner {
+			display: inline-block;
+			height: auto;
+			width: auto;
+			vertical-align: bottom;
+			position: absolute;
+			bottom: 0;
+			padding: 54px 49px 43px 49px;
+			background: rgba($first-main-color, 0.6);
+			border-radius: 50%;
+			@include eltdfTransform(translateX(-30%) translateY(30%));
+		}
+
+		.eltdf-banner-subtitle,
+		.eltdf-banner-title {
+			@include eltdfTransform(translateX(33%) translateY(-70%));
+			letter-spacing: 0.05em;
+		}
+	}
+
+	.eltdf-banner-link {
+		@include eltdfAbsoluteHolderLayout();
+		z-index: 100;
+	}
+}
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */

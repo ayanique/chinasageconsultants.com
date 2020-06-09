@@ -1,0 +1,10 @@
+2020-06-05T18:39:41+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 166038664 bytes) in /Users/amoryac/Documents/Work/chinasageconsultants.com/chinasageconsultants.com/wp-includes/class-wp-image-editor-gd.php on line 96
+
+2020-06-05T18:39:43+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 166004820 bytes) in /Users/amoryac/Documents/Work/chinasageconsultants.com/chinasageconsultants.com/wp-includes/class-wp-image-editor-gd.php on line 96
+
+2020-06-05T18:39:51+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 166038664 bytes) in /Users/amoryac/Documents/Work/chinasageconsultants.com/chinasageconsultants.com/wp-includes/class-wp-image-editor-gd.php on line 96
+
+2020-06-05T20:41:19+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 134380920 bytes) in /Users/amoryac/Documents/Work/chinasageconsultants.com/chinasageconsultants.com/wp-includes/class-wp-image-editor-gd.php on line 96
+
+2020-06-05T21:23:52+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 163136484 bytes) in /Users/amoryac/Documents/Work/chinasageconsultants.com/chinasageconsultants.com/wp-includes/class-wp-image-editor-gd.php on line 96
+

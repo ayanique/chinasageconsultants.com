@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Fullscreen Portfolio Grid style - begin
+   ========================================================================== */
+
+.eltdf-fullscreen-portfolio-grid-holder{
+    @include eltdfRelativeHolderLayout();
+    height: 100vh;
+    opacity: 0;
+    @include eltdfTransition(opacity .2s ease-out);
+
+    .eltdf-fpg-item{
+    	position: relative;
+    	display: inline-block;
+    	vertical-align: top;
+    	box-sizing: border-box;
+
+    	&:after{
+    		content: '';
+    		position: absolute;
+    		top: 0;
+			left: 0;
+    		right: 1px;
+    		bottom: 1px;
+    		background-color: rgba(0, 0, 0, 0.2);
+    		opacity: 0;
+			@include eltdfTransition(opacity .2s ease-out);
+    	}
+
+    	.eltdf-fpg-item-inner{
+    		position: relative;
+    		display: block;
+    		height: 100%;
+    		padding: 18px 21px;
+			border-right: 1px solid rgba(255,255,255,0.3);
+			border-bottom: 1px solid rgba(255,255,255,0.3);
+			box-sizing: border-box;
+    		z-index: 10;
+
+    		.eltdf-fpg-item-table{
+    			display: table;
+    			width: 100%;
+    			height: 100%;
+    		}
+
+    		.eltdf-fpg-item-table-cell{
+    			display: table-cell;
+    			vertical-align: bottom;
+    		}
+    	}
+
+    	.eltdf-fpgi-link{
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    	}
+
+    	.eltdf-pli-category-holder{
+    		opacity: 0;
+    		@include eltdfTransform(translateY(20px));
+    		-webkit-transition: -webkit-transform .3s, opacity .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform .3s, opacity .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    		a{
+    			position: relative;
+    			color: #fff;
+    			z-index: 20;
+    		}
+    	}
+
+    	.eltdf-pli-title{
+    		color: #fff;
+    		margin: 4px 0 0;
+    	}
+
+    	&.hovered{
+
+    		.eltdf-pli-category-holder{
+                -webkit-transition: -webkit-transform .3s, opacity .65s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: transform .3s, opacity .65s cubic-bezier(0.165, 0.84, 0.44, 1);
+                opacity: 1;
+                @include eltdfTransform(translateY(0));
+    		}
+
+    		&:after{
+    			opacity: 1;
+    		}
+    	}
+    }
+		
+	$columns_number: ('one','two', 'three', 'four', 'five');
+	
+	@for $i from 1 to length($columns_number) {
+		&.eltdf-fpg-#{nth($columns_number,$i)}-columns {
+			
+			.eltdf-fpg-item {
+				width: 100% / $i;
+			}
+		}
+	}
+
+	.eltdf-fpg-image-holder{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+
+        .eltdf-image-url {
+            @include eltdfTransition(all .0s .5s);
+        }
+
+		.eltdf-image-url-holder-inner{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+            @include eltdfTransition(opacity .4s .2s);
+
+            &.hovered{
+                @include eltdfTransition(opacity .5s);
+                opacity: 1;
+                z-index: 10;
+
+                .eltdf-image-url {
+                    @include eltdfTransitionTransform(20s cubic-bezier(0.215, 0.61, 0.355, 1));
+                    @include eltdfTransform(scale(1.06));
+                }
+            }
+		}
+
+		.eltdf-image-url{
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio loading element style - end
+   ========================================================================== */

@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Portfolio Single page style - begin
+   ========================================================================== */
+
+.eltdf-full-screen-slider-info-opened{
+	header{
+		pointer-events: none;
+		opacity: 0;
+	}
+}
+
+.eltdf-portfolio-single-holder {
+	@include eltdfRelativeHolderLayout();
+	margin: 0 0 84px;
+	
+    .eltdf-ps-image-holder {
+	    @include eltdfRelativeHolderLayout();
+	    
+	    .eltdf-ps-image {
+		    @include eltdfRelativeHolderLayout();
+		    box-sizing: border-box;
+		    
+		    a, img {
+			    position: relative;
+			    display: block;
+		    }
+	    }
+    }
+
+	.eltdf-ps-info-main-title {
+		margin: 0 0 15px;
+	}
+
+	.eltdf-separator-holder {
+		margin-bottom: 14px;
+		display: block!important;
+	}
+	
+	.eltdf-ps-content-item {
+		margin: 0 0 31px;
+		p {
+			margin: 0;
+		}
+	}
+	
+	.eltdf-ps-info-holder {
+		@include eltdfRelativeHolderLayout();
+		
+		.eltdf-ps-info-item {
+			@include eltdfRelativeHolderLayout();
+			margin: 0 0 10px;
+
+			> * {
+				display: inline-block;
+			}
+			
+			p, a {
+				margin: 0;
+			}
+		}
+		
+		.eltdf-ps-info-title {
+			margin: 0 9px 0 0;
+			font-size: 15px;
+			font-weight: 600;
+			color: #080808;
+			letter-spacing: .03em;
+		}
+	}
+	
+	.eltdf-ps-single-info {
+		.eltdf-ps-button-holder {
+			margin-bottom: 42px;
+		}
+		
+		.eltdf-ps-info-main-title {
+			margin-top: 31px;
+		}
+	}
+	
+	.eltdf-owl-slider {
+		.owl-nav .owl-next,
+		.owl-nav .owl-prev {
+			color: #fff;
+			border-color: #fff;
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio Single page style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio Single page specific style for types - begin
+   ========================================================================== */
+
+.eltdf-portfolio-single-holder {
+	
+	.eltdf-ps-image-holder {
+		
+		&.eltdf-ps-gallery-images {
+			
+			/***** Columns Layout - begin *****/
+			
+			$columns_number: ('two', 'three', 'four');
+			
+			@for $i from 0 to length($columns_number) {
+				&.eltdf-ps-#{nth($columns_number,$i+1)}-columns {
+					
+					.eltdf-ps-image {
+						width: 100% / ($i+2);
+					}
+					
+					@if ($i > 1) { // set different break point for four columns
+						@media only screen and (min-width: $laptop-landscape-plus-pixel) {
+							
+							.eltdf-ps-image {
+								
+								&:nth-child(#{$i+2}n+1) {
+									clear: both;
+								}
+							}
+						}
+					} @else {
+						@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+							
+							.eltdf-ps-image {
+								
+								&:nth-child(#{$i+2}n+1) {
+									clear: both;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			/***** Columns Layout - end *****/
+		}
+		
+		&.eltdf-ps-masonry-images {
+			
+			.eltdf-ps-image,
+			.eltdf-ps-grid-sizer {
+				width: 25%;
+			}
+			
+			.eltdf-ps-grid-gutter {
+				width: 0;
+			}
+			
+			.eltdf-ps-image {
+				
+				a,
+				img {
+					height: 100%;
+				}
+			}
+			
+			.eltdf-masonry-size-large-width {
+				
+				img {
+					width: 100%;
+				}
+			}
+			
+			/***** Columns Layout - begin *****/
+			
+			$columns_number: ('two', 'three', 'four');
+			
+			@for $i from 0 to length($columns_number) {
+				&.eltdf-ps-#{nth($columns_number,$i+1)}-columns {
+					$column_width: 100%/($i+2);
+					
+					.eltdf-ps-image,
+					.eltdf-ps-grid-sizer {
+						width: $column_width;
+					}
+					
+					.eltdf-ps-image.eltdf-masonry-size-large-width,
+					.eltdf-ps-image.eltdf-masonry-size-large-width-height {
+						width: $column_width * 2;
+					}
+				}
+			}
+			
+			/***** Columns Layout - end *****/
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Single page specific style for types - end
+   ========================================================================== */
